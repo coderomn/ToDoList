@@ -1,0 +1,31 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 40px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+header{
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    bottom: auto;
+}

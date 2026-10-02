@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs") %>
+
+    <h1>TUDULIZT!!!!!</h1>
+
+    <form action="/add" method="POST">
+        <input name="name" placeholder="New task" required>
+        <button>Add</button>
+    </form>
+
+    <h3>
+        Active: <%= active.length %>
+            Completed: <%= completed.length %>
+    </h3>
+
+    <p>
+        <a href="/">All</a>
+        <a href="/?filter=active">Active</a>
+        <a href="/?filter=completed">Completed</a>
+    </p>
+
+    <% tasks.forEach(task => { %>
+        <div>
+            <% if (task.done) { %>
+                <s>
+                    <%= task.name %>
+                </s>
+                <% } else { %>
+                    <%= task.name %>
+                <% } %>
+                        <p>Added: <%= task.date %>
+                        </p>
+
+                        <form action="/done/<%=task.id%>" method="POST">
+                            <button>Done</button>
+                        </form>
+
+                        <a href="/edit/<%=task.id%>">
+                            <button>Edit</button>
+                        </a>
+
+                        <form action="/delete/<%= task.id%>" method="POST">
+                            <button>Delete</button>
+                        </form>
+        </div>
+
+        <hr>
+
+        <% }) %>
+
+            <%- include("partials/footer.ejs") %>
